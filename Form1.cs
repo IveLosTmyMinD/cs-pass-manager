@@ -14,13 +14,13 @@ namespace cp_pass_manager
 {
     public partial class mainForm : Form
     {
-        private String dbname;
-        private SQLiteConnection dbconn;
-        private SQLiteCommand sqlcmd;
+        public String dbname;
+        public SQLiteConnection dbconn;
+        public SQLiteCommand sqlcmd;
         public mainForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void create_click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace cp_pass_manager
                 dbconn.Open();
                 sqlcmd.Connection = dbconn;
 
-                sqlcmd.CommandText = "CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, login TEXT NOT NULL, password TEXT NOT NULL, site TEXT, description TEXT)";
+                sqlcmd.CommandText = "CREATE TABLE IF NOT EXISTS passwords (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, login TEXT NOT NULL, password TEXT NOT NULL, site TEXT, description TEXT)";
                 sqlcmd.ExecuteNonQuery();
                 toolStripStatusLabel1.Text = "Подключение установлено";
             }
@@ -100,7 +100,6 @@ namespace cp_pass_manager
                     dgv.Rows.Clear();
                     for (int i = 0; i < dTable.Rows.Count; i++)
                     {
-                        
                         dgv.Rows.Add(dTable.Rows[i].ItemArray);
                     }
                 }
@@ -110,6 +109,33 @@ namespace cp_pass_manager
             catch (SQLiteException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void insert_Click(object sender, EventArgs e)
+        {
+            if (dbconn.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Open connection with database");
+                return;
+            }
+
+            addData addData = new addData();
+            if (addData.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    sqlcmd.CommandText = "INSERT INTO passwords ('name', 'login', 'password', 'site', 'description') values ('"+
+                        addData.Name+"','"+addData.Login+"','"+
+                        addData.Password+"','"+addData.Site+"','"+
+                        addData.Description+"')";
+
+                    sqlcmd.ExecuteNonQuery();
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
     }
