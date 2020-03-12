@@ -139,6 +139,7 @@
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(180, 22);
             this.delete.Text = "Удалить";
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // statusStrip1
             // 

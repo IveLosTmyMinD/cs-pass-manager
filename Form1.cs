@@ -138,5 +138,20 @@ namespace cp_pass_manager
                 }
             }
         }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            if (dbconn.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Open connection with database");
+                return;
+            }
+            //string[] dArr;
+            //dArr = new string[dgv.RowCount];
+            //for (int i = 0; i < dgv.RowCount; i++)
+            //    dArr[i] = string.Copy(dgv[1, i].Value.ToString());
+            //deleteForm delData = new deleteForm();
+            //delData.delNameChoise.Items.AddRange(dArr);
+        }
     }
 }
