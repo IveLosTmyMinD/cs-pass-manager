@@ -48,6 +48,8 @@
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.site = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -115,14 +117,14 @@
             // select
             // 
             this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(180, 22);
+            this.select.Size = new System.Drawing.Size(154, 22);
             this.select.Text = "Прочесть";
             this.select.Click += new System.EventHandler(this.select_Click);
             // 
             // insert
             // 
             this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(180, 22);
+            this.insert.Size = new System.Drawing.Size(154, 22);
             this.insert.Text = "Добавить";
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
@@ -130,14 +132,13 @@
             // 
             this.alter.Enabled = false;
             this.alter.Name = "alter";
-            this.alter.Size = new System.Drawing.Size(180, 22);
+            this.alter.Size = new System.Drawing.Size(154, 22);
             this.alter.Text = "Редактировать";
             // 
             // delete
             // 
-            this.delete.Enabled = false;
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(180, 22);
+            this.delete.Size = new System.Drawing.Size(154, 22);
             this.delete.Text = "Удалить";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -169,7 +170,7 @@
             this.description});
             this.dgv.Location = new System.Drawing.Point(0, 27);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(800, 398);
+            this.dgv.Size = new System.Drawing.Size(800, 378);
             this.dgv.TabIndex = 2;
             // 
             // id
@@ -181,6 +182,7 @@
             // 
             this.name.HeaderText = "Название";
             this.name.Name = "name";
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // login
             // 
@@ -202,11 +204,30 @@
             this.description.HeaderText = "Описание";
             this.description.Name = "description";
             // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(0, 411);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(176, 20);
+            this.tbSearch.TabIndex = 3;
+            // 
+            // btSearch
+            // 
+            this.btSearch.Location = new System.Drawing.Point(182, 409);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(75, 23);
+            this.btSearch.TabIndex = 4;
+            this.btSearch.Text = "button1";
+            this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btSearch);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -246,6 +267,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn site;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btSearch;
     }
 }
 

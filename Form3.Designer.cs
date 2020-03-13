@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.delNameChoise = new System.Windows.Forms.ComboBox();
+            this.mainFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btConfirm = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.mainFormBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // delNameChoise
@@ -70,6 +75,10 @@
             this.btCancel.UseVisualStyleBackColor = true;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
+            // mainFormBindingSource1
+            // 
+            this.mainFormBindingSource1.DataSource = typeof(cp_pass_manager.mainForm);
+            // 
             // deleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +91,8 @@
             this.Name = "deleteForm";
             this.Text = "Удаление";
             this.Load += new System.EventHandler(this.deleteForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +103,7 @@
         private System.Windows.Forms.Button btConfirm;
         private System.Windows.Forms.Button btCancel;
         public System.Windows.Forms.ComboBox delNameChoise;
+        private System.Windows.Forms.BindingSource mainFormBindingSource;
+        private System.Windows.Forms.BindingSource mainFormBindingSource1;
     }
 }

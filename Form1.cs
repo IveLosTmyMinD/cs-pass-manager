@@ -145,13 +145,23 @@ namespace cp_pass_manager
             {
                 MessageBox.Show("Open connection with database");
                 return;
+            }           
+   
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgv.RowCount; i++)
+            {
+                dgv.Rows[1].Selected = false;
+                for (int j = 0; j < dgv.ColumnCount; j++)
+                    if (dgv.Rows[i].Cells[j].Value != null)
+                        if (dgv.Rows[i].Cells[j].Value.ToString().Contains(tbSearch.Text))
+                        {
+                            dgv.Rows[i].Selected = true;
+                            break;
+                        }
             }
-            //string[] dArr;
-            //dArr = new string[dgv.RowCount];
-            //for (int i = 0; i < dgv.RowCount; i++)
-            //    dArr[i] = string.Copy(dgv[1, i].Value.ToString());
-            //deleteForm delData = new deleteForm();
-            //delData.delNameChoise.Items.AddRange(dArr);
         }
     }
 }

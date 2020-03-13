@@ -105,6 +105,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\addData.datasource" />
+    <None Include="Properties\DataSources\cp_pass_manager.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\cp_pass_manager.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\deleteForm.datasource" />
+    <None Include="Properties\DataSources\mainForm.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
