@@ -17,7 +17,8 @@ namespace cp_pass_manager
         public String dbname;
         public SQLiteConnection dbconn;
         public SQLiteCommand sqlcmd;
-        public static string uname, ulogin, upass, usite, udesc;
+        public static string dID, dName;
+        DialogResult result;
         public mainForm()
         {
             InitializeComponent();
@@ -146,7 +147,22 @@ namespace cp_pass_manager
             {
                 MessageBox.Show("Open connection with database");
                 return;
-            }           
+            }
+            try
+            {
+                dID = dgv.CurrentRow.Cells[0].Value.ToString();
+                dName = dgv.CurrentRow.Cells[1].Value.ToString();
+                result = MessageBox.Show("Вы уверены, что хотите удалить "+dName+"?", "Подтвердите", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    sqlcmd.CommandText = "DELETE FROM passwords WHERE ID = '" + dID + "'";
+                    sqlcmd.ExecuteNonQuery();
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
    
         }
 
