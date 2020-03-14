@@ -174,11 +174,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbLogin;
-        private System.Windows.Forms.TextBox tbPass;
-        private System.Windows.Forms.TextBox tbSite;
-        private System.Windows.Forms.TextBox tbDesc;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox tbPass;
+        public System.Windows.Forms.TextBox tbSite;
+        public System.Windows.Forms.TextBox tbDesc;
+        public System.Windows.Forms.TextBox tbName;
+        public System.Windows.Forms.TextBox tbLogin;
     }
 }
