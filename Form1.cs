@@ -104,6 +104,7 @@ namespace cp_pass_manager
                     {
                         dgv.Rows.Add(dTable.Rows[i].ItemArray);
                     }
+                    dgv.ClearSelection();
                 }
                 else
                     MessageBox.Show("База данных пуста");
