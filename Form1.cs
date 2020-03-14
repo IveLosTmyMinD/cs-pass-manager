@@ -128,10 +128,10 @@ namespace cp_pass_manager
             {
                 try
                 {
-                    sqlcmd.CommandText = "INSERT INTO passwords ('name', 'login', 'password', 'site', 'description') values ('"+
-                        addData.Name+"','"+addData.Login+"','"+
-                        addData.Password+"','"+addData.Site+"','"+
-                        addData.Description+"')";
+                    sqlcmd.CommandText = "INSERT INTO passwords ('name', 'login', 'password', 'site', 'description') values ('" +
+                        addData.Name + "','" + addData.Login + "','" +
+                        addData.Password + "','" + addData.Site + "','" +
+                        addData.Description + "')";
 
                     sqlcmd.ExecuteNonQuery();
                 }
@@ -153,7 +153,7 @@ namespace cp_pass_manager
             {
                 dID = dgv.CurrentRow.Cells[0].Value.ToString();
                 dName = dgv.CurrentRow.Cells[1].Value.ToString();
-                result = MessageBox.Show("Вы уверены, что хотите удалить "+dName+"?", "Подтвердите", MessageBoxButtons.YesNo);
+                result = MessageBox.Show("Вы уверены, что хотите удалить " + dName + "?", "Подтвердите", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     sqlcmd.CommandText = "DELETE FROM passwords WHERE ID = '" + dID + "'";
@@ -164,7 +164,35 @@ namespace cp_pass_manager
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-   
+
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            if (dbconn.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Open connection with database");
+                return;
+            }
+            updateForm fmUpd = new updateForm();
+            fmUpd.tbID.Text = this.dgv.CurrentRow.Cells[0].Value.ToString();
+            fmUpd.tbName.Text = this.dgv.CurrentRow.Cells[1].Value.ToString();
+            fmUpd.tbLogin.Text = this.dgv.CurrentRow.Cells[2].Value.ToString();
+            fmUpd.tbPass.Text = this.dgv.CurrentRow.Cells[3].Value.ToString();
+            fmUpd.tbSite.Text = this.dgv.CurrentRow.Cells[4].Value.ToString();
+            fmUpd.tbDesc.Text = this.dgv.CurrentRow.Cells[5].Value.ToString();
+            //fmUpd.Show();
+            if (fmUpd.ShowDialog() == DialogResult.OK)
+            {
+                sqlcmd.CommandText = "UPDATE passwords SET name = @name, login = @login, password = @password, site = @site, description = @desc WHERE id = @id";
+                sqlcmd.Parameters.Add(new SQLiteParameter("@name", fmUpd.tbName.Text));
+                sqlcmd.Parameters.Add(new SQLiteParameter("@login", fmUpd.tbLogin.Text));
+                sqlcmd.Parameters.Add(new SQLiteParameter("@password", fmUpd.tbPass.Text));
+                sqlcmd.Parameters.Add(new SQLiteParameter("@site", fmUpd.tbSite.Text));
+                sqlcmd.Parameters.Add(new SQLiteParameter("@desc", fmUpd.tbDesc.Text));
+                sqlcmd.Parameters.Add(new SQLiteParameter("@id", fmUpd.tbID.Text));
+                sqlcmd.ExecuteNonQuery();
+            }
         }
 
         private void btSearch_Click(object sender, EventArgs e)
@@ -182,35 +210,7 @@ namespace cp_pass_manager
             }
         }
 
-        public void btUpdate_Click(object sender, EventArgs e)
-        {
-            if (dbconn.State != ConnectionState.Open)
-            {
-                MessageBox.Show("Open connection with database");
-                return;
-            }            
-            updateForm fmUpd = new updateForm();
-            fmUpd.tbID.Text = this.dgv.CurrentRow.Cells[0].Value.ToString();
-            fmUpd.tbName.Text = this.dgv.CurrentRow.Cells[1].Value.ToString();
-            fmUpd.tbLogin.Text = this.dgv.CurrentRow.Cells[2].Value.ToString();
-            fmUpd.tbPass.Text = this.dgv.CurrentRow.Cells[3].Value.ToString();
-            fmUpd.tbSite.Text = this.dgv.CurrentRow.Cells[4].Value.ToString();
-            fmUpd.tbDesc.Text = this.dgv.CurrentRow.Cells[5].Value.ToString();
-            fmUpd.Show();
-            //if (fmUpd.ShowDialog() == DialogResult.OK)
-            //{
-            //    try
-            //    {
-            //        sqlcmd.CommandText = 
-
-            //        sqlcmd.ExecuteNonQuery();
-            //    }
-            //    catch (SQLiteException ex)
-            //    {
-            //        MessageBox.Show("Error: " + ex.Message);
-            //    }
-            //}
-        }        
+        
     }
 }
 

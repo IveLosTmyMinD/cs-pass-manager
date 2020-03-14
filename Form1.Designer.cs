@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.create = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +43,14 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.btSearch = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.site = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -118,28 +118,28 @@
             // select
             // 
             this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(154, 22);
+            this.select.Size = new System.Drawing.Size(180, 22);
             this.select.Text = "Прочесть";
             this.select.Click += new System.EventHandler(this.select_Click);
             // 
             // insert
             // 
             this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(154, 22);
+            this.insert.Size = new System.Drawing.Size(180, 22);
             this.insert.Text = "Добавить";
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // btUpdate
             // 
             this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(154, 22);
+            this.btUpdate.Size = new System.Drawing.Size(180, 22);
             this.btUpdate.Text = "Редактировать";
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // delete
             // 
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(154, 22);
+            this.delete.Size = new System.Drawing.Size(180, 22);
             this.delete.Text = "Удалить";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -175,23 +175,6 @@
             this.dgv.Size = new System.Drawing.Size(800, 378);
             this.dgv.TabIndex = 2;
             // 
-            // tbSearch
-            // 
-            this.tbSearch.Location = new System.Drawing.Point(0, 405);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(176, 20);
-            this.tbSearch.TabIndex = 3;
-            // 
-            // btSearch
-            // 
-            this.btSearch.Location = new System.Drawing.Point(182, 405);
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(75, 23);
-            this.btSearch.TabIndex = 4;
-            this.btSearch.Text = "button1";
-            this.btSearch.UseVisualStyleBackColor = true;
-            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
-            // 
             // id
             // 
             this.id.HeaderText = "id";
@@ -210,8 +193,8 @@
             // 
             // password
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.password.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.password.DefaultCellStyle = dataGridViewCellStyle1;
             this.password.HeaderText = "Пароль";
             this.password.Name = "password";
             // 
@@ -224,6 +207,23 @@
             // 
             this.description.HeaderText = "Описание";
             this.description.Name = "description";
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(0, 405);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(176, 20);
+            this.tbSearch.TabIndex = 3;
+            // 
+            // btSearch
+            // 
+            this.btSearch.Location = new System.Drawing.Point(182, 405);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(75, 23);
+            this.btSearch.TabIndex = 4;
+            this.btSearch.Text = "button1";
+            this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // mainForm
             // 

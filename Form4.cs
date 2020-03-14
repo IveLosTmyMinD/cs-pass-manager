@@ -37,7 +37,11 @@ namespace cp_pass_manager
             Site = "Site";
             Description = "Description";
 
-            
+            //tbName.Text = Name;
+            //tbLogin.Text = Login;
+            //tbPass.Text = Password;
+            //tbSite.Text = Site;
+            //tbDesc.Text = Description;
         }
 
         private void button1_Click(object sender, EventArgs e)
