@@ -128,11 +128,12 @@ namespace cp_pass_manager
             {
                 try
                 {
-                    sqlcmd.CommandText = "INSERT INTO passwords ('name', 'login', 'password', 'site', 'description') values ('" +
-                        addData.Name + "','" + addData.Login + "','" +
-                        addData.Password + "','" + addData.Site + "','" +
-                        addData.Description + "')";
-
+                    sqlcmd.CommandText = "INSERT INTO passwords ('name', 'login', 'password', 'site', 'description') values (@name, @login, @password, @site, @desc)";
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@name", addData.tbName.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@login", addData.tbLogin.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@password", addData.tbPass.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@site", addData.tbSite.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@desc", addData.tbDesc.Text));
                     sqlcmd.ExecuteNonQuery();
                 }
                 catch (SQLiteException ex)
@@ -184,14 +185,21 @@ namespace cp_pass_manager
             //fmUpd.Show();
             if (fmUpd.ShowDialog() == DialogResult.OK)
             {
-                sqlcmd.CommandText = "UPDATE passwords SET name = @name, login = @login, password = @password, site = @site, description = @desc WHERE id = @id";
-                sqlcmd.Parameters.Add(new SQLiteParameter("@name", fmUpd.tbName.Text));
-                sqlcmd.Parameters.Add(new SQLiteParameter("@login", fmUpd.tbLogin.Text));
-                sqlcmd.Parameters.Add(new SQLiteParameter("@password", fmUpd.tbPass.Text));
-                sqlcmd.Parameters.Add(new SQLiteParameter("@site", fmUpd.tbSite.Text));
-                sqlcmd.Parameters.Add(new SQLiteParameter("@desc", fmUpd.tbDesc.Text));
-                sqlcmd.Parameters.Add(new SQLiteParameter("@id", fmUpd.tbID.Text));
-                sqlcmd.ExecuteNonQuery();
+                try
+                {
+                    sqlcmd.CommandText = "UPDATE passwords SET name = @name, login = @login, password = @password, site = @site, description = @desc WHERE id = @id";
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@name", fmUpd.tbName.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@login", fmUpd.tbLogin.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@password", fmUpd.tbPass.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@site", fmUpd.tbSite.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@desc", fmUpd.tbDesc.Text));
+                    sqlcmd.Parameters.Add(new SQLiteParameter("@id", fmUpd.tbID.Text));
+                    sqlcmd.ExecuteNonQuery();
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
