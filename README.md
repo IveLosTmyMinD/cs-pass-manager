@@ -4,9 +4,7 @@
 
 This is really bad pass manager. Don't use it in real life!
  
- TODO: updating
 
- 
  TODO (may be): encryption?..
 
 
