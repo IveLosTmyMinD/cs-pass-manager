@@ -17,6 +17,7 @@ namespace cp_pass_manager
         public String dbname;
         public SQLiteConnection dbconn;
         public SQLiteCommand sqlcmd;
+        public static string uname, ulogin, upass, usite, udesc;
         public mainForm()
         {
             InitializeComponent();
@@ -163,5 +164,36 @@ namespace cp_pass_manager
                         }
             }
         }
+
+        public void btUpdate_Click(object sender, EventArgs e)
+        {
+            if (dbconn.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Open connection with database");
+                return;
+            }            
+            updateForm fmUpd = new updateForm();
+            fmUpd.tbID.Text = this.dgv.CurrentRow.Cells[0].Value.ToString();
+            fmUpd.tbName.Text = this.dgv.CurrentRow.Cells[1].Value.ToString();
+            fmUpd.tbLogin.Text = this.dgv.CurrentRow.Cells[2].Value.ToString();
+            fmUpd.tbPass.Text = this.dgv.CurrentRow.Cells[3].Value.ToString();
+            fmUpd.tbSite.Text = this.dgv.CurrentRow.Cells[4].Value.ToString();
+            fmUpd.tbDesc.Text = this.dgv.CurrentRow.Cells[5].Value.ToString();
+            fmUpd.Show();
+            //if (fmUpd.ShowDialog() == DialogResult.OK)
+            //{
+            //    try
+            //    {
+            //        sqlcmd.CommandText = 
+
+            //        sqlcmd.ExecuteNonQuery();
+            //    }
+            //    catch (SQLiteException ex)
+            //    {
+            //        MessageBox.Show("Error: " + ex.Message);
+            //    }
+            //}
+        }        
     }
 }
+

@@ -37,7 +37,7 @@
             this.данныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.select = new System.Windows.Forms.ToolStripMenuItem();
             this.insert = new System.Windows.Forms.ToolStripMenuItem();
-            this.alter = new System.Windows.Forms.ToolStripMenuItem();
+            this.btUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.delete = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -108,7 +108,7 @@
             this.данныеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.select,
             this.insert,
-            this.alter,
+            this.btUpdate,
             this.delete});
             this.данныеToolStripMenuItem.Name = "данныеToolStripMenuItem";
             this.данныеToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
@@ -117,28 +117,28 @@
             // select
             // 
             this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(154, 22);
+            this.select.Size = new System.Drawing.Size(180, 22);
             this.select.Text = "Прочесть";
             this.select.Click += new System.EventHandler(this.select_Click);
             // 
             // insert
             // 
             this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(154, 22);
+            this.insert.Size = new System.Drawing.Size(180, 22);
             this.insert.Text = "Добавить";
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
-            // alter
+            // btUpdate
             // 
-            this.alter.Enabled = false;
-            this.alter.Name = "alter";
-            this.alter.Size = new System.Drawing.Size(154, 22);
-            this.alter.Text = "Редактировать";
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(180, 22);
+            this.btUpdate.Text = "Редактировать";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // delete
             // 
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(154, 22);
+            this.delete.Size = new System.Drawing.Size(180, 22);
             this.delete.Text = "Удалить";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -170,6 +170,7 @@
             this.description});
             this.dgv.Location = new System.Drawing.Point(0, 27);
             this.dgv.Name = "dgv";
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(800, 378);
             this.dgv.TabIndex = 2;
             // 
@@ -258,7 +259,7 @@
         private System.Windows.Forms.ToolStripMenuItem данныеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem select;
         private System.Windows.Forms.ToolStripMenuItem insert;
-        private System.Windows.Forms.ToolStripMenuItem alter;
+        private System.Windows.Forms.ToolStripMenuItem btUpdate;
         private System.Windows.Forms.ToolStripMenuItem delete;
         public System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
