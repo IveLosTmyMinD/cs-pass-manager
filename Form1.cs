@@ -93,6 +93,7 @@ namespace cp_pass_manager
 
             try
             {
+                dgv.Visible = true;
                 sqlQuery = "SELECT * FROM passwords";
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, dbconn);
                 adapter.Fill(dTable);

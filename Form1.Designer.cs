@@ -118,28 +118,28 @@
             // select
             // 
             this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(180, 22);
+            this.select.Size = new System.Drawing.Size(154, 22);
             this.select.Text = "Прочесть";
             this.select.Click += new System.EventHandler(this.select_Click);
             // 
             // insert
             // 
             this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(180, 22);
+            this.insert.Size = new System.Drawing.Size(154, 22);
             this.insert.Text = "Добавить";
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // btUpdate
             // 
             this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(180, 22);
+            this.btUpdate.Size = new System.Drawing.Size(154, 22);
             this.btUpdate.Text = "Редактировать";
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // delete
             // 
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(180, 22);
+            this.delete.Size = new System.Drawing.Size(154, 22);
             this.delete.Text = "Удалить";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -174,6 +174,7 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(800, 378);
             this.dgv.TabIndex = 2;
+            this.dgv.Visible = false;
             // 
             // id
             // 
@@ -221,7 +222,7 @@
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(75, 23);
             this.btSearch.TabIndex = 4;
-            this.btSearch.Text = "button1";
+            this.btSearch.Text = "Поиск";
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
