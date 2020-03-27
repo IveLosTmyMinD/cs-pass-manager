@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addData));
             this.label1 = new System.Windows.Forms.Label();
             this.btOK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,17 +46,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 45);
+            this.label1.Location = new System.Drawing.Point(27, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
             // 
             // btOK
             // 
-            this.btOK.Location = new System.Drawing.Point(12, 225);
+            this.btOK.Location = new System.Drawing.Point(14, 260);
             this.btOK.Name = "btOK";
-            this.btOK.Size = new System.Drawing.Size(75, 23);
+            this.btOK.Size = new System.Drawing.Size(87, 27);
             this.btOK.TabIndex = 1;
             this.btOK.Text = "Добавить";
             this.btOK.UseVisualStyleBackColor = true;
@@ -64,79 +65,79 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 78);
+            this.label2.Location = new System.Drawing.Point(27, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(42, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Логин";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 114);
+            this.label3.Location = new System.Drawing.Point(27, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Пароль";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 150);
+            this.label4.Location = new System.Drawing.Point(27, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(33, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Сайт";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 182);
+            this.label5.Location = new System.Drawing.Point(27, 210);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.Size = new System.Drawing.Size(62, 15);
             this.label5.TabIndex = 5;
             this.label5.Text = "Описание";
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(106, 42);
+            this.tbName.Location = new System.Drawing.Point(124, 48);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(100, 20);
+            this.tbName.Size = new System.Drawing.Size(116, 22);
             this.tbName.TabIndex = 6;
             // 
             // tbLogin
             // 
-            this.tbLogin.Location = new System.Drawing.Point(106, 75);
+            this.tbLogin.Location = new System.Drawing.Point(124, 87);
             this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(100, 20);
+            this.tbLogin.Size = new System.Drawing.Size(116, 22);
             this.tbLogin.TabIndex = 7;
             // 
             // tbPass
             // 
-            this.tbPass.Location = new System.Drawing.Point(106, 111);
+            this.tbPass.Location = new System.Drawing.Point(124, 128);
             this.tbPass.Name = "tbPass";
-            this.tbPass.Size = new System.Drawing.Size(100, 20);
+            this.tbPass.Size = new System.Drawing.Size(116, 22);
             this.tbPass.TabIndex = 8;
             // 
             // tbSite
             // 
-            this.tbSite.Location = new System.Drawing.Point(106, 147);
+            this.tbSite.Location = new System.Drawing.Point(124, 170);
             this.tbSite.Name = "tbSite";
-            this.tbSite.Size = new System.Drawing.Size(100, 20);
+            this.tbSite.Size = new System.Drawing.Size(116, 22);
             this.tbSite.TabIndex = 9;
             // 
             // tbDesc
             // 
-            this.tbDesc.Location = new System.Drawing.Point(106, 179);
+            this.tbDesc.Location = new System.Drawing.Point(124, 207);
             this.tbDesc.Name = "tbDesc";
-            this.tbDesc.Size = new System.Drawing.Size(100, 20);
+            this.tbDesc.Size = new System.Drawing.Size(116, 22);
             this.tbDesc.TabIndex = 10;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(158, 225);
+            this.button2.Location = new System.Drawing.Point(184, 260);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(87, 27);
             this.button2.TabIndex = 11;
             this.button2.Text = "Отменить";
             this.button2.UseVisualStyleBackColor = true;
@@ -144,9 +145,9 @@
             // 
             // addData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 289);
+            this.ClientSize = new System.Drawing.Size(286, 333);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tbDesc);
             this.Controls.Add(this.tbSite);
@@ -159,6 +160,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addData";
             this.Text = "Добавить";
             this.ResumeLayout(false);
