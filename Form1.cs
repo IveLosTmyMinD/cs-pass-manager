@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
@@ -22,7 +16,6 @@ namespace cp_pass_manager
         public mainForm()
         {
             InitializeComponent();
-
         }
 
         private void create_click(object sender, EventArgs e)
@@ -42,7 +35,7 @@ namespace cp_pass_manager
             catch (SQLiteException ex)
             {
                 toolStripStatusLabel1.Text = "Подключение не установлено";
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
@@ -71,7 +64,7 @@ namespace cp_pass_manager
             catch (SQLiteException ex)
             {
                 toolStripStatusLabel1.Text = "Подключение не установлено";
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
@@ -112,7 +105,7 @@ namespace cp_pass_manager
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
@@ -120,7 +113,7 @@ namespace cp_pass_manager
         {
             if (dbconn.State != ConnectionState.Open)
             {
-                MessageBox.Show("Open connection with database");
+                MessageBox.Show("Откройте соединение с базой данных");
                 return;
             }
 
@@ -136,10 +129,11 @@ namespace cp_pass_manager
                     sqlcmd.Parameters.Add(new SQLiteParameter("@site", addData.tbSite.Text));
                     sqlcmd.Parameters.Add(new SQLiteParameter("@desc", addData.tbDesc.Text));
                     sqlcmd.ExecuteNonQuery();
+                    select_Click(sender, e);
                 }
                 catch (SQLiteException ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Ошибка: " + ex.Message);
                 }
             }
         }
@@ -148,7 +142,7 @@ namespace cp_pass_manager
         {
             if (dbconn.State != ConnectionState.Open)
             {
-                MessageBox.Show("Open connection with database");
+                MessageBox.Show("Откройте соединение с базой данных");
                 return;
             }
             try
@@ -160,11 +154,12 @@ namespace cp_pass_manager
                 {
                     sqlcmd.CommandText = "DELETE FROM passwords WHERE ID = '" + dID + "'";
                     sqlcmd.ExecuteNonQuery();
+                    select_Click(sender, e);
                 }
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
 
         }
@@ -173,7 +168,7 @@ namespace cp_pass_manager
         {
             if (dbconn.State != ConnectionState.Open)
             {
-                MessageBox.Show("Open connection with database");
+                MessageBox.Show("Откройте соединение с базой данных");
                 return;
             }
             updateForm fmUpd = new updateForm();
@@ -196,16 +191,22 @@ namespace cp_pass_manager
                     sqlcmd.Parameters.Add(new SQLiteParameter("@desc", fmUpd.tbDesc.Text));
                     sqlcmd.Parameters.Add(new SQLiteParameter("@id", fmUpd.tbID.Text));
                     sqlcmd.ExecuteNonQuery();
+                    select_Click(sender, e);
                 }
                 catch (SQLiteException ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Ошибка: " + ex.Message);
                 }
             }
         }
 
         private void btSearch_Click(object sender, EventArgs e)
         {
+            if (dbconn.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Откройте соединение с базой данных");
+                return;
+            }
             for (int i = 0; i < dgv.RowCount; i++)
             {
                 dgv.Rows[1].Selected = false;
@@ -217,9 +218,7 @@ namespace cp_pass_manager
                             break;
                         }
             }
-        }
-
-        
+        }        
     }
 }
 
