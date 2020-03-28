@@ -165,10 +165,51 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>384, 17</value>
   </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>524, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="speedSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF/SURBVFhH7ZYxSkNBEIa9iJ1dOrtcxEt4gnRewhPYpRdB
+        JGntLAQrGxE0CiJBhTTJyv94s8ybnZld39sQhPwwEMi+/b/ZnRn2IOxYe4D/B/C+mofZ2zhcvhy6gTXP
+        P9P2K1vFANisxFhGDiQLUJqxF1evRyaECZAzvl9O2pWpHr/Ok/UWhAoA8+vFKNnk7vM0rDerdlVeEgQQ
+        UgmAZe5l7ElCyFPoAGjmfY25kDnth9+4WirODsDN4ri6OaTVBAIwEQDZ8z9rmFMhW8UMjwggs68hr4sQ
+        UATg97Tto0eQRwSgxbXMSRoE9+gU4S60B4gA1DJ0TzQoagn7336c2JNQtiECnVELgvbHnlwNgBxCPOQH
+        fcX35GoAvIFRoy1lglwNgDUwasmbsrEGSHwiAmyonr4vOubyRBOAh+VZXDykCGVXIfCgkUoA8OLhp9AH
+        Aubao0Z7TSUAkFYT3lzQspVhFbMKAFmF+dfIdZEJAA2FKGlhF4BUCtJnZhQBbE8h/AIBJ5vSEI4xagAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="speedAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABJSURBVFhH7dMxCgAgDENRz+J5vGxPGHERh04NKMIPZG3e
+        0iYjPcZuNWXAOe4gAAAAAADAe0B26GYBAOANAQAAAADAv4AVd1ySJvUn0WpaohhFAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="speedRemove.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA2SURBVFhH7dMxEQBACANBhHyJf2evIcigYDNz/TapLA8A
+        AAAAAKD+62wGAOCGAAAAAADXAckAxkbO01WF/pwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="speedEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7ZIxCsIwFEDFyc2Ojp5APIuLeAPv4CRuehMH
+        wUVdBBEURFAHdx3FSayD4PDNp0kbayO1SX6WPvhLSfveb1sAx9AFXG4As0Mw5yu/SBkw2QGMNsGMt/wi
+        UcBx2GHSlYOA1xTgUYV5twGLXjMKwOHYC0C57wHcmYINRqwHrUC+P/FDtgJicjHLPguIYTaAv/K4GJ5t
+        fuAbcwGKrX/JETMBGeWIfkCSPIVYoBegKUeyBWT42VT8H6DxvZNIH6DaWkOOsLtTYHhrmd8BlraWYU9S
+        YHFrmeQAIjnyGaB65RbEgiiAcGuZKMCvkMuRMKBeK7KhEwvCAM8rgVemlSNhgCvygDwgD3AcAPAGEt9v
+        TQgKUwEAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>55</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMMOAADDDgAAAAAAAAAA

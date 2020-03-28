@@ -209,6 +209,26 @@ namespace cp_pass_manager
             }
         }
 
+        private void speedSelect_Click(object sender, EventArgs e)
+        {
+            select_Click(sender, e);
+        }
+
+        private void speedAdd_Click(object sender, EventArgs e)
+        {
+            insert_Click(sender, e);
+        }
+
+        private void speedRemove_Click(object sender, EventArgs e)
+        {
+            delete_Click(sender, e);
+        }
+
+        private void speedEdit_Click(object sender, EventArgs e)
+        {
+            btUpdate_Click(sender, e);
+        }
+
         private void btSearch_Click(object sender, EventArgs e)
         {
             if (dbconn.State != ConnectionState.Open)

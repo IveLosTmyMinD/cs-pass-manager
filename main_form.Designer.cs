@@ -54,9 +54,15 @@
             this.btSearch = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.speedSelect = new System.Windows.Forms.ToolStripButton();
+            this.speedAdd = new System.Windows.Forms.ToolStripButton();
+            this.speedRemove = new System.Windows.Forms.ToolStripButton();
+            this.speedEdit = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -174,10 +180,10 @@
             this.password,
             this.site,
             this.description});
-            this.dgv.Location = new System.Drawing.Point(0, 31);
+            this.dgv.Location = new System.Drawing.Point(0, 52);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(933, 436);
+            this.dgv.Size = new System.Drawing.Size(933, 415);
             this.dgv.TabIndex = 2;
             this.dgv.Visible = false;
             // 
@@ -242,11 +248,65 @@
             this.openFileDialog1.Filter = "Файл базы данных (*.db)|*.db|Все файлы (*.*)|*.*";
             this.openFileDialog1.Title = "Открыть базу";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.speedSelect,
+            this.speedAdd,
+            this.speedRemove,
+            this.speedEdit});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(641, 25);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // speedSelect
+            // 
+            this.speedSelect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.speedSelect.Image = ((System.Drawing.Image)(resources.GetObject("speedSelect.Image")));
+            this.speedSelect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.speedSelect.Name = "speedSelect";
+            this.speedSelect.Size = new System.Drawing.Size(23, 22);
+            this.speedSelect.Text = "toolStripButton1";
+            this.speedSelect.Click += new System.EventHandler(this.speedSelect_Click);
+            // 
+            // speedAdd
+            // 
+            this.speedAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.speedAdd.Image = ((System.Drawing.Image)(resources.GetObject("speedAdd.Image")));
+            this.speedAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.speedAdd.Name = "speedAdd";
+            this.speedAdd.Size = new System.Drawing.Size(23, 22);
+            this.speedAdd.Text = "toolStripButton2";
+            this.speedAdd.Click += new System.EventHandler(this.speedAdd_Click);
+            // 
+            // speedRemove
+            // 
+            this.speedRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.speedRemove.Image = ((System.Drawing.Image)(resources.GetObject("speedRemove.Image")));
+            this.speedRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.speedRemove.Name = "speedRemove";
+            this.speedRemove.Size = new System.Drawing.Size(23, 22);
+            this.speedRemove.Text = "toolStripButton3";
+            this.speedRemove.Click += new System.EventHandler(this.speedRemove_Click);
+            // 
+            // speedEdit
+            // 
+            this.speedEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.speedEdit.Image = ((System.Drawing.Image)(resources.GetObject("speedEdit.Image")));
+            this.speedEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.speedEdit.Name = "speedEdit";
+            this.speedEdit.Size = new System.Drawing.Size(23, 22);
+            this.speedEdit.Text = "toolStripButton4";
+            this.speedEdit.Click += new System.EventHandler(this.speedEdit_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 519);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btSearch);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.dgv);
@@ -263,6 +323,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,6 +356,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton speedSelect;
+        private System.Windows.Forms.ToolStripButton speedAdd;
+        private System.Windows.Forms.ToolStripButton speedRemove;
+        private System.Windows.Forms.ToolStripButton speedEdit;
     }
 }
 
