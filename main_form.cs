@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
-using System.IO;
 
 namespace cp_pass_manager
 {
