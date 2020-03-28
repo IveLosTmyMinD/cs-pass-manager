@@ -9,6 +9,3 @@ This is really bad pass manager. Don't use it in real life!
 
 
  TODO: master-pass
-
-
- TODO: choise dbfile

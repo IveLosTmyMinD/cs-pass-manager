@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +52,8 @@
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btSearch = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -197,8 +199,8 @@
             // 
             // password
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.password.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.password.DefaultCellStyle = dataGridViewCellStyle4;
             this.password.HeaderText = "Пароль";
             this.password.Name = "password";
             // 
@@ -228,6 +230,17 @@
             this.btSearch.Text = "Поиск";
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Файл базы данных (*.db)|*.db|Все файлы (*.*)|*.*";
+            this.saveFileDialog1.Title = "Сохранить базу";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Файл базы данных (*.db)|*.db|Все файлы (*.*)|*.*";
+            this.openFileDialog1.Title = "Открыть базу";
             // 
             // mainForm
             // 
@@ -279,6 +292,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn site;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
