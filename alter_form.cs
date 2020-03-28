@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace cp_pass_manager
@@ -20,8 +13,7 @@ namespace cp_pass_manager
 
         public updateForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,13 +27,7 @@ namespace cp_pass_manager
             Login = "Login";
             Password = "Password";
             Site = "Site";
-            Description = "Description";
-
-            //tbName.Text = Name;
-            //tbLogin.Text = Login;
-            //tbPass.Text = Password;
-            //tbSite.Text = Site;
-            //tbDesc.Text = Description;
+            Description = "Description";           
         }
 
         private void button1_Click(object sender, EventArgs e)
