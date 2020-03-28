@@ -20,8 +20,13 @@ namespace cp_pass_manager
 
         private void create_click(object sender, EventArgs e)
         {
-            if (!File.Exists(dbname))
-                SQLiteConnection.CreateFile(dbname);
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            else
+            {
+                dbname = saveFileDialog1.FileName;
+                SQLiteConnection.CreateFile(dbname);                
+            }
             try
             {
                 dbconn = new SQLiteConnection("Data Source=" + dbname + ";Version=3;");
@@ -42,22 +47,27 @@ namespace cp_pass_manager
         private void mainForm_Load(object sender, EventArgs e)
         {
             dbconn = new SQLiteConnection();
-            sqlcmd = new SQLiteCommand();
-
-            dbname = "passwords.db";
+            sqlcmd = new SQLiteCommand();            
             toolStripStatusLabel1.Text = "Подключение не установлено";
         }
 
         private void open_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(dbname))
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+            {
                 MessageBox.Show("Пожалуйста, создайте базу данных и пустую таблицу. Нажмите \"Создать\"");
-
+                return;
+            }
+            else
+            {
+                dbname = openFileDialog1.FileName;
+            }
             try
             {
                 dbconn = new SQLiteConnection("Data Source=" + dbname + ";Version=3;");
                 dbconn.Open();
                 sqlcmd.Connection = dbconn;
+                select_Click(sender, e);
 
                 toolStripStatusLabel1.Text = "Подключение установлено";
             }
