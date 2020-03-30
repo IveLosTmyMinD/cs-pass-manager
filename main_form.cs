@@ -17,22 +17,22 @@ namespace cp_pass_manager
             InitializeComponent();
         }
 
-        private void create_click(object sender, EventArgs e)
+        private void create_click(object sender, EventArgs e) //кнопка создания файла бд
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel) 
                 return;
             else
             {
                 dbname = saveFileDialog1.FileName;
-                SQLiteConnection.CreateFile(dbname);                
+                SQLiteConnection.CreateFile(dbname);    // создание файла         
             }
             try
             {
-                dbconn = new SQLiteConnection("Data Source=" + dbname + ";Version=3;");
+                dbconn = new SQLiteConnection("Data Source=" + dbname + ";Version=3;"); 
                 dbconn.Open();
                 sqlcmd.Connection = dbconn;
 
-                sqlcmd.CommandText = "CREATE TABLE IF NOT EXISTS passwords (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, login TEXT NOT NULL, password TEXT NOT NULL, site TEXT, description TEXT)";
+                sqlcmd.CommandText = "CREATE TABLE IF NOT EXISTS passwords (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, login TEXT NOT NULL, password TEXT NOT NULL, site TEXT, description TEXT)"; //ну тут понятно
                 sqlcmd.ExecuteNonQuery();
                 toolStripStatusLabel1.Text = "Подключение установлено";
             }
@@ -97,10 +97,10 @@ namespace cp_pass_manager
             {
                 dgv.Visible = true;
                 sqlQuery = "SELECT * FROM passwords";
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, dbconn);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, dbconn);//создаем таблицу, в которой будет храниться инфа из бд
                 adapter.Fill(dTable);
 
-                if (dTable.Rows.Count > 0)
+                if (dTable.Rows.Count > 0)//вынос из таблицы на форму
                 {
                     dgv.Rows.Clear();
                     for (int i = 0; i < dTable.Rows.Count; i++)
